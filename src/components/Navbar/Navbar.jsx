@@ -28,7 +28,7 @@ const Navbar = () => {
         <div>
             <nav className='navbar'>
                 <div className='logo'>
-                    <a href="#" className='element'>Healths<span>Sync</span></a>
+                    <a href="#" className='element'>Health<span>Sync</span></a>
 
                 </div>
                 <ul className='list'>
