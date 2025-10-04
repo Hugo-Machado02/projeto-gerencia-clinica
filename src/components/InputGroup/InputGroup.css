@@ -1,0 +1,68 @@
+.input-group{
+    width: 100%;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.group-element{
+    position: relative;
+    width: 100%;
+    margin-bottom: .15rem;
+    box-sizing: border-box;
+}
+
+.group-element label{
+    font-size: .8rem;
+    font-weight: 500;
+    margin-left: .3rem;
+}
+
+.group-element input{
+    width: 100%;
+    padding: .6rem .8rem;
+    border: .1rem solid #B5BAC2;
+    border-radius: 10px;
+    outline: none;
+    font-size: .7rem;
+}
+
+.group-element input[type="password"]{
+    padding: .6rem 2.3rem .6rem .8rem;
+}
+
+.group-element input:focus{
+    border: .12rem solid #94989e;
+    box-shadow: 0 0 .2rem rgba(148, 152, 158, .3);
+}
+
+.group-element input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.group-element input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.password-container {
+    position: relative; /* O pai agora é um ponto de referência para os filhos absolutos */
+}
+
+.password-toggle {
+    display: flex;
+    position: absolute;
+    right: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #94989e;
+    z-index: 10;
+    font-size: 1rem;
+}
+
+.password-toggle:hover {
+    color: #888;
+}
