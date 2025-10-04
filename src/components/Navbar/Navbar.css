@@ -108,8 +108,8 @@
     right: 3rem;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 .8rem 1rem rgba(0, 0, 0, 0.15);
-    padding: .5rem 0;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+    padding: 0 0 .5rem 0;
     min-width: 200px;
     z-index: 100;
     display: flex;
