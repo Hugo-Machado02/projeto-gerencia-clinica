@@ -2,7 +2,7 @@ import React from 'react'
 import './InputGroup.css'
 import usePasswordToggle from '../../hooks/usePasswordToggle'
 
-const InputGroup = ({type, value, name, onChange, label}) => {
+const InputGroup = ({type, value, name, onChange, label, placehoder}) => {
     const {inputType, Icon, toggleVisibility} = usePasswordToggle();
 
     const finalType = type === 'password' ? inputType : type;
@@ -15,7 +15,7 @@ const InputGroup = ({type, value, name, onChange, label}) => {
                 <label htmlFor={name}>{label}</label>
             </div>
             <div className='group-element'>
-                <input type={finalType} value={value} name={name} onChange={onChange} id={name}/>
+                <input type={finalType} value={value} name={name} onChange={onChange} id={name} placeholder={placehoder}/>
 
                 {hasPasswordToggle && (
                     <span 
