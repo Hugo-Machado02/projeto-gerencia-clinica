@@ -1,0 +1,113 @@
+.appointments-list {
+  margin: 20px auto;
+  padding: 0 10px;
+}
+
+.appointment-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eee;
+}
+
+.appointment-details {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.appointment-datetime {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 25px;
+  width: 90px;
+}
+
+.date-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.time-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #555;
+  margin: 2px 0;
+  line-height: 1.2;
+}
+
+.status-badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 8px;
+  margin-top: 5px;
+  border-radius: 15px;
+  text-transform: capitalize;
+}
+
+.status-confirmado {
+  background-color: #e6f9ed;
+  color: #28a745;
+}
+
+.status-realizado {
+  background-color: #f0f0f0;
+  color: #6c757d;
+}
+
+.appointment-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.doctor-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.specialty-name {
+  font-size: 14px;
+  font-weight: 400;
+  color: #6c757d;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.appointment-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.action-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+  transition: color 0.2s;
+}
+
+.cancel-button {
+  color: #dc3545;
+}
+
+.reschedule-button {
+  color: #007bff;
+}
+
+.cancel-button:hover, .reschedule-button:hover {
+  text-decoration: underline;
+}
