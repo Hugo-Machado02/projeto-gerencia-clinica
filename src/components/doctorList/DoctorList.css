@@ -1,14 +1,10 @@
 .doctor-list-container {
     display: flex;
     flex-wrap: wrap;
-    /* Permite que os cards quebrem para a próxima linha */
     gap: 32px;
-    /* Espaço entre os cards */
     justify-content: center;
-    /* Centraliza os cards no container */
     padding: 40px;
     background-color: #f8f9fa;
-    /* Cor de fundo suave */
 }
 
 .loading-message,

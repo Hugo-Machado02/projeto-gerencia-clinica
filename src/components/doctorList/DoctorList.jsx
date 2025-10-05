@@ -1,48 +1,45 @@
 import React, { useState, useEffect } from 'react';
-import DoctorCard from '../doctorCard/DoctorCard';
+import DoctorCard from '../doctorCard/DoctorCard.jsx';
 import './DoctorList.css';
 
-// --- DADOS MOCKADOS ---
-// Em um projeto real, esses dados viriam do seu banco de dados/API
 const mockDoctors = [
   {
     id: 1,
     name: 'Dr. Ricardo Luz',
     specialty: 'Oftalmologista',
-    imageUrl: 'https://i.imgur.com/L3dwsP4.png', // URL de exemplo, substitua pela sua
+    imageUrl: 'https://i.imgur.com/L3dwsP4.png',
   },
   {
     id: 2,
-    name: 'Dr. Ricardo Luz',
-    specialty: 'Oftalmologista',
+    name: 'Dr. Richard Luz',
+    specialty: 'Generalista',
     imageUrl: 'https://i.imgur.com/L3dwsP4.png',
   },
   {
     id: 3,
-    name: 'Dr. Ricardo Luz',
-    specialty: 'Oftalmologista',
+    name: 'Dr. Ricard Luz',
+    specialty: 'Oftamologist',
     imageUrl: 'https://i.imgur.com/L3dwsP4.png',
   },
   {
     id: 4,
-    name: 'Dr. Ricardo Luz',
-    specialty: 'Oftalmologista',
+    name: 'Dr. Ric Luz',
+    specialty: 'Estetica',
     imageUrl: 'https://i.imgur.com/L3dwsP4.png',
   },
   {
     id: 5,
-    name: 'Dr. Ricardo Luz',
-    specialty: 'Oftalmologista',
+    name: 'Dr. Rizinho Luz',
+    specialty: 'Dentista',
     imageUrl: 'https://i.imgur.com/L3dwsP4.png',
   },
-    {
+  {
     id: 6,
-    name: 'Dr. Ricardo Luz',
-    specialty: 'Oftalmologista',
+    name: 'Dr. Ricardio Luz',
+    specialty: 'Cardiologista',
     imageUrl: 'https://i.imgur.com/L3dwsP4.png',
   },
 ];
-
 
 const DoctorList = () => {
   const [doctors, setDoctors] = useState([]);
@@ -50,18 +47,12 @@ const DoctorList = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // --- SIMULANDO UMA CHAMADA À API ---
-    // A função fetchDoctors buscaria os dados do seu backend
     const fetchDoctors = async () => {
       try {
-        // Substitua este setTimeout por sua chamada de API real
-        // Ex: const response = await fetch('https://sua-api.com/medicos');
-        //     const data = await response.json();
-        //     setDoctors(data);
         setTimeout(() => {
           setDoctors(mockDoctors);
           setLoading(false);
-        }, 1000); // Simula 1 segundo de carregamento
+        }, 1000);
       } catch (err) {
         setError('Falha ao buscar os médicos.');
         setLoading(false);
@@ -69,7 +60,7 @@ const DoctorList = () => {
     };
 
     fetchDoctors();
-  }, []); // O array vazio [] garante que o useEffect rode apenas uma vez
+  }, []);
 
   if (loading) {
     return <div className="loading-message">Carregando médicos...</div>;
