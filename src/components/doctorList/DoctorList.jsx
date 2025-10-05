@@ -49,6 +49,21 @@ const DoctorList = () => {
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
+        // Chamada real para API - listagem completa
+        // const response = await fetch('http://localhost:3000/medicos');
+        // if (!response.ok) {
+        //   throw new Error('Erro ao buscar médicos');
+        // }
+        // const data = await response.json();
+        // setDoctors(data);
+        // setLoading(false);
+
+        // Exemplos com parâmetros:
+        // const response = await fetch('http://localhost:3000/medicos?page=1&limit=10'); // Paginação
+        // const response = await fetch('http://localhost:3000/medicos?specialty=Cardiologista'); // Filtro por especialidade
+        // const response = await fetch('http://localhost:3000/medicos?search=Ricardo'); // Busca por nome
+
+        // Simulação com dados mockados
         setTimeout(() => {
           setDoctors(mockDoctors);
           setLoading(false);
