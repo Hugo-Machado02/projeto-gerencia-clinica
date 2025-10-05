@@ -1,43 +1,49 @@
+import React from 'react';
 import './AppointmentCard.css';
 
-function AppointmentCard({ appointment }) {
-  const handleViewDetails = () => {
-    alert(`Detalhes do agendamento de ${appointment.patientName}`);
+const AppointmentsCard = ({ appointment }) => {
+  const { date, time, doctor, specialty, status, canCancel, canReschedule } = appointment;
+
+  const formatDate = (dateString) => {
+    const [day, month] = dateString.split('/');
+    const months = ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];
+    return `${day} de ${months[parseInt(month) - 1]}`;
   };
 
-  const handleCancel = () => {
-    if (confirm(`Deseja cancelar o agendamento de ${appointment.patientName}?`)) {
-      alert('Agendamento cancelado!');
+  const getStatusClassName = (status) => {
+    switch (status) {
+      case 'Confirmado':
+        return 'status-confirmado';
+      case 'Realizado':
+        return 'status-realizado';
+      default:
+        return 'status-default';
     }
   };
 
   return (
     <div className="appointment-card">
-      <div className="appointment-header">
-        <h3 className="patient-name">{appointment.patientName}</h3>
-        <span className="appointment-time">{appointment.time}</span>
-      </div>
       <div className="appointment-details">
-        <p className="appointment-date">{appointment.date}</p>
-        <p className="appointment-type">{appointment.type}</p>
+        <div className="appointment-datetime">
+          <p className="date-text">{formatDate(date)}</p>
+          <p className="time-text">{time}</p>
+          <div className={`status-badge ${getStatusClassName(status)}`}>
+            {status}
+          </div>
+        </div>
+
+        <div className="appointment-info">
+          <p className="doctor-name">{doctor}</p>
+          <p className="specialty-name">{specialty}</p>
+        </div>
       </div>
-      <div className="appointment-footer">
-        <div className="appointment-status">
-          <span className={`status ${appointment.status.toLowerCase()}`}>
-            {appointment.status}
-          </span>
-        </div>
-        <div className="appointment-actions">
-          <button className="btn-details" onClick={handleViewDetails}>
-            Ver Detalhes
-          </button>
-          <button className="btn-cancel" onClick={handleCancel}>
-            Cancelar
-          </button>
-        </div>
+
+      <div className="appointment-actions">
+        {canCancel && <button className="action-button cancel-button">Cancelar</button>}
+        {canReschedule && <button className="action-button reschedule-button">Remarcar</button>}
       </div>
     </div>
   );
-}
+};
 
-export default AppointmentCard;
+export default AppointmentsCard;
