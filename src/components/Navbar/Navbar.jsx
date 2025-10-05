@@ -32,7 +32,7 @@ const Navbar = ({ onNavigate }) => {
 
                 </div>
                 <ul className='list'>
-                    <li><a href="#" className='element marked'>Home</a></li>
+                    <li><a href="#" className='element marked' onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('home'); }}>Home</a></li>
                     <li><a href="#" className='element'>Pacientes</a></li>
                     <li><a href="#" className='element' onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('medicos'); }}>Médicos</a></li>
                     <li><a href="#" className='element'>Agendamentos</a></li>
