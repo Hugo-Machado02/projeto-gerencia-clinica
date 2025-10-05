@@ -26,30 +26,33 @@
   flex-direction: column;
   align-items: flex-start;
   margin-right: 25px;
-  width: 90px;
+  padding-right: 25px;
+  min-width: 90px;
+  border-right: 1px solid #eee;
 }
 
-.date-text {
-  font-size: 16px;
+.appointment-card .date-text {
+  font-size: 32px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #0D47A1;
   margin: 0;
   line-height: 1.2;
 }
 
-.time-text {
-  font-size: 16px;
+.appointment-card .time-text {
+  font-size: 20px;
   font-weight: 400;
   color: #555;
-  margin: 2px 0;
+  margin-top: -20px;
   line-height: 1.2;
 }
 
-.status-badge {
+.appointment-card .status-badge {
   font-size: 12px;
   font-weight: 600;
   padding: 3px 8px;
-  margin-top: 5px;
+  margin-top: 2px;
+  margin-left: 15px;
   border-radius: 15px;
   text-transform: capitalize;
 }
