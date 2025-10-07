@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import './Navbar.css'
 import image from '../../assets/doctor.jpg'
 
-const Navbar = () => {
+const Navbar = ({ onNavigate }) => {
     const [isMenuUserOpen, setIsMenuUserOpen] = useState(false);
     const dropdownRef = useRef(null);
 
@@ -32,8 +32,9 @@ const Navbar = () => {
 
                 </div>
                 <ul className='list'>
-                    <li><a href="#" className='element marked'>Home</a></li>
+                    <li><a href="#" className='element marked' onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('home'); }}>Home</a></li>
                     <li><a href="#" className='element'>Pacientes</a></li>
+                    <li><a href="#" className='element' onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('medicos'); }}>Médicos</a></li>
                     <li><a href="#" className='element'>Agendamentos</a></li>
                 </ul>
                 <div className='user' onClick={toggleMenuUser}>
