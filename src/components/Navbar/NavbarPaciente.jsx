@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react'
 import './Navbar.css'
-import image from '../../assets/doctor.jpg'
+import image from '../../assets/paciente.jpg'
 
-const Navbar = ({ onNavigate }) => {
+const Navbar = () => {
     const [isMenuUserOpen, setIsMenuUserOpen] = useState(false);
     const dropdownRef = useRef(null);
 
@@ -32,16 +32,13 @@ const Navbar = ({ onNavigate }) => {
 
                 </div>
                 <ul className='list'>
-                    <li><a href="#" className='element marked' onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('home'); }}>Home</a></li>
-                    <li><a href="#" className='element'>Pacientes</a></li>
-                    <li><a href="#" className='element' onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('medicos'); }}>Médicos</a></li>
+                    <li><a href="#" className='element'>Médico</a></li>
                     <li><a href="#" className='element'>Agendamentos</a></li>
-                    <li><a href="#" className='element'>Avisos</a></li>
                 </ul>
                 <div className='user' onClick={toggleMenuUser}>
                     <div className='info'>
-                        <p className='name'>Dr. Ricardo Luz</p>
-                        <p className='specialty'>Oftamologista</p>
+                        <p className='name'>Lucas Silva</p>
+                        <p className='specialty'>Paciente</p>
                     </div>
                     <div className='photo'>
                         <img src={image} alt="Foto de Perfil" />
