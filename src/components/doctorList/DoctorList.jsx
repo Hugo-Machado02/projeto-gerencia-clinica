@@ -11,20 +11,20 @@ const mockDoctors = [
   },
   {
     id: 2,
-    name: 'Dr. Richard Luz',
-    specialty: 'Generalista',
+    name: 'Dr. Lucas Pereira',
+    specialty: 'Gastroenterologista',
     imageUrl: 'https://i.imgur.com/L3dwsP4.png',
   },
   {
     id: 3,
     name: 'Dr. Ricard Luz',
-    specialty: 'Oftamologist',
+    specialty: 'Oftalmologista',
     imageUrl: 'https://i.imgur.com/L3dwsP4.png',
   },
   {
     id: 4,
-    name: 'Dr. Ric Luz',
-    specialty: 'Estetica',
+    name: 'Dra. Ana Costa',
+    specialty: 'Pediatra',
     imageUrl: 'https://i.imgur.com/L3dwsP4.png',
   },
   {
@@ -35,7 +35,31 @@ const mockDoctors = [
   },
   {
     id: 6,
-    name: 'Dr. Ricardio Luz',
+    name: 'Dr. Rafael Almeida',
+    specialty: 'Neurologista',
+    imageUrl: 'https://i.imgur.com/L3dwsP4.png',
+  },
+  {
+    id: 7,
+    name: 'Dra. Juliana Ferreira',
+    specialty: 'Pediatra',
+    imageUrl: 'https://i.imgur.com/L3dwsP4.png',
+  },
+  {
+    id: 8,
+    name: 'Dr. Gustavo Ribeiro',
+    specialty: 'Estética',
+    imageUrl: 'https://i.imgur.com/L3dwsP4.png',
+  },
+  {
+    id: 9,
+    name: 'Dra. Patrícia Soares',
+    specialty: 'Dentista',
+    imageUrl: 'https://i.imgur.com/L3dwsP4.png',
+  },
+  {
+    id: 10,
+    name: 'Dr. Marcelo Cunha',
     specialty: 'Cardiologista',
     imageUrl: 'https://i.imgur.com/L3dwsP4.png',
   },
@@ -64,12 +88,15 @@ const DoctorList = () => {
         // const response = await fetch('http://localhost:3000/medicos?search=Ricardo'); // Busca por nome
 
         // Simulação com dados mockados
-        setTimeout(() => {
-          setDoctors(mockDoctors);
-          setLoading(false);
-        }, 1000);
+        // setTimeout(() => {
+        //   setDoctors(mockDoctors);
+        //   setLoading(false);
+        // }, 1000);
+        setDoctors(mockDoctors);
+        setLoading(false);
       } catch (err) {
         setError('Falha ao buscar os médicos.');
+        console.error(err);
         setLoading(false);
       }
     };
