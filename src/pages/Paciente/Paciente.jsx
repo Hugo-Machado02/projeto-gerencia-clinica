@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import Navbar from '../../components/Navbar/Navbar';
+import Navbar from '../../components/Navbar/NavbarPaciente.jsx';
 import Container from '../../components/Container/Container';
 import DoctorList from '../../components/doctorList/DoctorList.jsx';
-import './Paciente.css';
 
 const Paciente = () => {
-  const [currentView, setCurrentView] = useState('home');
+  const [currentView, setCurrentView] = useState('medico');
 
   const handleNavigation = (view) => {
     setCurrentView(view);
@@ -13,21 +12,27 @@ const Paciente = () => {
 
   const renderContent = () => {
     switch (currentView) {
-      case 'medicos':
+      case 'medico':
         return <DoctorList />;
-      case 'home':
-      default:
-        return <div>Bem-vindo à página do paciente</div>;
+      case 'agendamentos':
+        return <div>Bem-vindo à Agendamentos</div>;
+    }
+  };
+
+  const returnName = () => {
+    switch (currentView) {
+      case 'medico':
+        return "Médico";
+      case 'agendamentos':
+        return "Agendamentos";
     }
   };
 
   return (
+
     <div>
-      <Navbar onNavigate={handleNavigation} />
-      {currentView === 'medicos' && (
-        <h1 style={{ color: '#0D47A1', fontWeight: 'bold', textAlign: 'left', margin: '20px 0', fontSize: '2rem', width: '90%', marginLeft: 'auto', marginRight: 'auto', paddingLeft: '50px' }}>Médicos</h1>
-      )}
-      <Container>
+      <Navbar onNavigate={handleNavigation} activeView={currentView} />
+      <Container name={returnName()}>
         {renderContent()}
       </Container>
     </div>
