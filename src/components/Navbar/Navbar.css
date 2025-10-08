@@ -2,7 +2,7 @@
     width: 100%;
     display: flex;
     position: relative;
-    height: auto;
+    height: 8vh;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -17,6 +17,9 @@
     color: #fff;
     font-size: .9rem;
     font-weight: 600;
+}
+.logo{
+    cursor: pointer;
 }
 
 .logo .element{
