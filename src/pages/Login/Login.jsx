@@ -21,7 +21,7 @@ const Login = () => {
                 </div>
                 <form className='formulario-login' onSubmit={handleChange}>
                     <div className="element-container-login">
-                        <InputGroup type="text" value={formData.emailTxt} name="emailTxt" onChange={handleChange} label="E-mail" placehoder="Digite o E-mail" className="element-login"></InputGroup>
+                        <InputGroup type="email" value={formData.emailTxt} name="emailTxt" onChange={handleChange} label="E-mail" placehoder="Digite o E-mail" className="element-login"></InputGroup>
                     </div>
                     <div className="element-container-login">
                         <InputGroup type="password" value={formData.senha} name="senhaTxt" onChange={handleChange} label="Senha" placehoder="Digite a Senha"  className="element-login"></InputGroup>

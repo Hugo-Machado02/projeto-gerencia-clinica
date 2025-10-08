@@ -1,39 +1,27 @@
-import React, { useState, useRef, useEffect } from 'react'
 import './Navbar.css'
 import image from '../../assets/paciente.jpg'
+import useClickModal from '../../hooks/useClickModal';
+import useNavigationPages from '../../hooks/useNavigationPages';
 
-const Navbar = () => {
-    const [isMenuUserOpen, setIsMenuUserOpen] = useState(false);
-    const dropdownRef = useRef(null);
+const Navbar = ({ onNavigate, activeView }) => {
+    const {isOpen: isMenuUserOpen, setIsOpen: setIsMenuUserOpen, ref: dropdownRef} = useClickModal();
+    const { clickLinkNavbar, getLinkClass } = useNavigationPages(onNavigate, activeView);
+    
 
     const toggleMenuUser = () => {
         setIsMenuUserOpen(!isMenuUserOpen);
     };
 
-    useEffect(() => {
-        const handleOutsideClick = (event) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-                setIsMenuUserOpen(false);
-            }
-        };
-
-        document.addEventListener('mousedown', handleOutsideClick);
-
-        return () => {
-            document.removeEventListener('mousedown', handleOutsideClick);
-        };
-    }, []);
-
     return (
         <div>
             <nav className='navbar'>
                 <div className='logo'>
-                    <a href="#" className='element'>Health<span>Sync</span></a>
+                    <a className={getLinkClass('medico')} onClick={clickLinkNavbar('medico')}>Health<span>Sync</span></a>
 
                 </div>
                 <ul className='list'>
-                    <li><a href="#" className='element'>Médico</a></li>
-                    <li><a href="#" className='element'>Agendamentos</a></li>
+                    <li><a className={getLinkClass('medico')} onClick={clickLinkNavbar('medico')}>Médico</a></li>
+                    <li><a className={getLinkClass('agendamentos')} onClick={clickLinkNavbar('agendamentos')}>Agendamentos</a></li>
                 </ul>
                 <div className='user' onClick={toggleMenuUser}>
                     <div className='info'>
@@ -47,10 +35,10 @@ const Navbar = () => {
 
                 {isMenuUserOpen && (
                     <div className='dropdown-menu' ref={dropdownRef}>
-                        <a href="#" className='menu-item'>Minha Conta</a>
-                        <a href="#" className='menu-item'>Alterar Senha</a>
+                        <a className='menu-item'>Minha Conta</a>
+                        <a className='menu-item'>Alterar Senha</a>
                         <hr className='menu-divider' />
-                        <a href="#" className='menu-item logout'>Sair</a>
+                        <a className='menu-item logout'>Sair</a>
                     </div>
                 )}
             </nav>
