@@ -7,7 +7,7 @@ const AppointmentsCard = ({ appointment }) => {
   const formatDate = (dateString) => {
     const [day, month] = dateString.split('/');
     const months = ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];
-    return `${day} de ${months[parseInt(month) - 1]}`;
+    return `${day} DE ${months[parseInt(month) - 1]}`;
   };
 
   const getStatusClassName = (status) => {
@@ -16,6 +16,8 @@ const AppointmentsCard = ({ appointment }) => {
         return 'status-confirmado';
       case 'Realizado':
         return 'status-realizado';
+      case 'Cancelado':
+        return 'status-cancelado';
       default:
         return 'status-default';
     }
@@ -28,7 +30,7 @@ const AppointmentsCard = ({ appointment }) => {
           <p className="date-text">{formatDate(date)}</p>
           <p className="time-text">{time}</p>
           <div className={`status-badge ${getStatusClassName(status)}`}>
-            {status}
+            <p>{status}</p>
           </div>
         </div>
 
