@@ -2,7 +2,13 @@
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    justify-content: center ;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem 0;
+    overflow-y: auto;
+    height: 100%;
+    scrollbar-width: none;
+    flex-grow: 0;
 }
 
 .loading-message,
