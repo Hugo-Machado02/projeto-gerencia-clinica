@@ -2,7 +2,7 @@
   display: flex;
   width: 100%;
   height: 90vh;
-  padding: 1rem 3rem;
+  padding: 1rem 5rem;
   flex-direction: column;
   justify-content: start;
   align-items: self-start;
@@ -11,7 +11,7 @@
 
 .titulo-pages{
   color: #0D47A1;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .conteudo-layout {
@@ -20,13 +20,9 @@
   flex-grow: 1;
   padding: 2rem;
   background-color: rgb(255, 255, 255);
-  border-radius: 30px;
+  border-radius: 1rem;
   box-shadow: 0 0px 20px rgba(0, 0, 0, 0.20);
   box-sizing: border-box;
-  overflow-y: auto;
-  position: relative;scrollbar-width: none;
-}
-
-.seu-elemento::-webkit-scrollbar {
-  display: none;
+  overflow: hidden;
+  position: relative;
 }
