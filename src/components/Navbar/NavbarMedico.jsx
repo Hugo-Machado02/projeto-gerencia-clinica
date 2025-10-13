@@ -39,7 +39,7 @@ const Navbar = ({ onNavigate,  activeView}) => {
                         <a href="" className='menu-item'>Minha Conta</a>
                         <a href="" className='menu-item'>Alterar Senha</a>
                         <hr className='menu-divider' />
-                        <a href="" className='menu-item logout'>Sair</a>
+                        <a href='/' className='menu-item logout'>Sair</a>
                     </div>
                 )}
             </nav>
