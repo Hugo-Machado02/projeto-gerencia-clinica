@@ -1,0 +1,121 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-family: inherit;
+  transition: opacity 0.3s ease; 
+}
+
+.modal-dialog {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2); 
+  width: 90%;
+  max-width: 35rem;
+  padding: 1.5rem;
+  position: relative;
+  transform: translateY(0);
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ededed; 
+}
+
+.modal-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #0d47a1;
+  margin: 0;
+}
+
+.modal-close-button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #667;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.modal-close-button:hover {
+  color: #000;
+}
+
+.modal-specialty {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.modal-current-date {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ededed;
+}
+
+.reschedule-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.element-container-reagendamento{
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+.btns-reagendamento{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.btn-reagendamento {
+  background-color: #0D47A1; 
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: .8rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s;
+  margin-top: 20px;
+}
+
+.btn-reagendamento:hover {
+  background-color: #0A3A8A;
+}
+
+.cancelar-reagendamento{
+  background-color: #D32F2F; 
+}
+
+.cancelar-reagendamento:hover {
+  background-color: #c42222;
+}
