@@ -1,7 +1,7 @@
 import React from 'react';
 import './AppointmentCard.css';
 
-const AppointmentsCard = ({ appointment }) => {
+const AppointmentsCard = ({ appointment, onRescheduleClick}) => {
   const { date, time, doctor, specialty, status, canCancel, canReschedule } = appointment;
 
   const formatDate = (dateString) => {
@@ -42,7 +42,7 @@ const AppointmentsCard = ({ appointment }) => {
 
       <div className="appointment-actions">
         {canCancel && <button className="action-button cancel-button">Cancelar</button>}
-        {canReschedule && <button className="action-button reschedule-button">Remarcar</button>}
+        {canReschedule && <button className="action-button reschedule-button" onClick={() => onRescheduleClick(appointment)}>Remarcar</button>}
       </div>
     </div>
   );
