@@ -1,5 +1,5 @@
 import React from 'react'
-import InputGroup from '../../Components/InputGroup/InputGroup'
+import InputGroup from '../../components/InputGroup/InputGroup';
 import useForm from '../../hooks/useForm';
 
 import './Login.css'
