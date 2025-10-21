@@ -70,7 +70,7 @@ const AppointmentsList = ({ appointments = mockAppointments }) => {
 
   const handleCloseModal = () => {
     setIisModalReagendamentoOpen(false);
-    setSelectedAppointment(null); // Limpa o agendamento ao fechar
+    setSelectedAppointment(null); 
   };
 
   if (!appointments || appointments.length === 0) {
